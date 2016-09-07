@@ -3104,8 +3104,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   margin: 0 0 20px;
-  font-size: 1.375rem;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 20px;
   text-transform: uppercase; }
 
 h2 {
@@ -3130,8 +3130,8 @@ h6 {
 
 /* Global typogpraphy */
 p, td, label {
-  font-size: 1.375rem;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 18px;
   margin: 0 0 25px 0;
   font-weight: normal; }
 
@@ -3477,7 +3477,7 @@ http://www.456bereastreet.com/archive/201212/ios_webkit_browsers_and_auto-zoomin
       max-width: 32%; } }
   @media screen and (min-width: 64em) {
     .crash-intro {
-      padding: 2% 2% 8%; } }
+      padding: 2%; } }
   @media screen and (min-width: 75em) {
     .crash-intro {
       max-width: 24%; } }
@@ -3489,6 +3489,13 @@ http://www.456bereastreet.com/archive/201212/ios_webkit_browsers_and_auto-zoomin
     text-decoration: underline; }
     .crash-intro a:link:hover {
       text-decoration: none; }
+  .crash-intro svg {
+    height: 40px;
+    width: 40px;
+    margin-top: 4rem; }
+    .crash-intro svg path {
+      stroke: white;
+      stroke-width: 0.1em; }
 
 .crash-footer {
   text-align: center; }

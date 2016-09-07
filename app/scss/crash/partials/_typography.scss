@@ -72,8 +72,8 @@ h1, h2, h3, h4, h5, h6 {
 %title,
 h1 {
     margin:0 0 $margin;
-    font-size: rem-calc(22);
-    line-height: 24px;
+    font-size: rem-calc(18);
+    line-height: 20px;
     text-transform: uppercase;
 }
 
@@ -107,8 +107,8 @@ h6 {
 
 /* Global typogpraphy */
 p, td, label {
-    font-size: rem-calc(22);
-    line-height: 24px;
+    font-size: rem-calc(16);
+    line-height: 18px;
     margin:0 0 $module-spacing 0;
     font-weight: normal;
 }
