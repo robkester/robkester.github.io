@@ -3494,8 +3494,7 @@ http://www.456bereastreet.com/archive/201212/ios_webkit_browsers_and_auto-zoomin
     width: 40px;
     margin-top: 4rem; }
     .crash-intro svg path {
-      stroke: white;
-      stroke-width: 0.1em; }
+      fill: white; }
 
 .crash-footer {
   text-align: center; }
