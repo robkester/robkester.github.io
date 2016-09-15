@@ -3459,13 +3459,47 @@ http://www.456bereastreet.com/archive/201212/ios_webkit_browsers_and_auto-zoomin
   height: 100vh; }
 
 .crash-container {
-  padding: 20px; }
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+  z-index: 0; }
   @media screen and (min-width: 40em) {
     .crash-container {
       max-width: 100%; } }
   @media screen and (min-width: 64em) {
     .crash-container {
-      padding: 2%; } }
+      padding: 2% 2% 0; } }
+
+.flex-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0;
+  z-index: -1;
+  margin-bottom: 0; }
+  .flex-video video {
+    left: 50%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*
+      the rules below are a replacement for 'object-fit'
+      which is unavailable in all versions of IE
+      .. the ':not' is to cover devices which arbitrarily
+      update VH on scroll - see the JS
+    */ }
+    @media (max-aspect-ratio: 1280 / 720) {
+      .video-container:not(.fixed-device) .flex-video video {
+        width: calc(100vh*1280/720);
+        height: 100vh; } }
+    @media (min-aspect-ratio: 1280 / 720) {
+      .video-container:not(.fixed-device) .flex-video video {
+        width: 100vw;
+        height: calc(100vw*720/1280); } }
 
 .crash-intro {
   background-color: black;
@@ -3483,12 +3517,16 @@ http://www.456bereastreet.com/archive/201212/ios_webkit_browsers_and_auto-zoomin
       max-width: 24%; } }
   .crash-intro h1, .crash-intro p, .crash-intro a {
     color: white; }
+    .crash-intro h1 > .green, .crash-intro p > .green, .crash-intro a > .green {
+      color: #1FFC26; }
   .crash-intro h1 {
     letter-spacing: 0.5rem; }
   .crash-intro a:link {
-    text-decoration: underline; }
+    text-decoration: none; }
     .crash-intro a:link:hover {
       text-decoration: none; }
+  .crash-intro .icon {
+    text-decoration: none; }
   .crash-intro svg {
     height: 40px;
     width: 40px;

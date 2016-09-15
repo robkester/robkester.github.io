@@ -6,6 +6,58 @@
 
 </div><!-- /.wrap -->
 </div><!-- /.rm-wrapper -->
+<script type="text/javascript">
+  // var crashVid = document.getElementById("crash-vid");
+  // crashVid.defaultPlaybackRate = 0.4;
+  // crashVid.play();
 
+  /*
+   We have a problem on some mobile devices where window height changes
+   arbitrarily on scroll thanks to a hiding address bar. This updates any
+   VH units and causes an expensive redraw.
+
+   To tackle this we use the below script to fix the height of our video
+   elements which would otherwise be relying on VH. See the CSS as well.
+  */
+  (function () {
+        // check for a touch device
+    var touch = 'ontouchstart' in window || navigator.msMaxTouchPoints,
+
+        // with max dimensions of a standard ipad
+        small = window.screen && Math.max(window.screen.width, window.screen.height) <= 1024;
+
+    // ignore everything else
+    if(!touch || !small) return;
+
+        // get all the videos on the page
+    var $videos = document.querySelectorAll('.video-container'),
+
+        // a width for later, we leave this unset on purpose
+        width;
+
+    // set the initial height and update it on resize
+    update();
+    window.addEventListener('resize', update);
+
+    // this function does all the heavy lifting
+    function update () {
+
+      // only update if width has changed (we don't care about height changes)
+      // essentially only updates on orientation change after the first time
+      if(window.screen.width===width) return;
+
+      // set the new width
+      width = window.screen.width;
+
+      // iterate over each video setting our new 'fixed' (minimum) height
+      for(var i=0;i<$videos.length;i++) {
+        $videos[i].classList.add('fixed-device');
+        $videos[i].style.minHeight = window.innerHeight + 'px';
+      }
+
+      // viola, we're done until the next device rotation
+    }
+  })();
+</script>
 </body>
 </html>
