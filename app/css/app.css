@@ -3522,7 +3522,7 @@ http://www.456bereastreet.com/archive/201212/ios_webkit_browsers_and_auto-zoomin
   .crash-intro h1 {
     letter-spacing: 0.5rem; }
   .crash-intro a:link {
-    text-decoration: none; }
+    text-decoration: underline; }
     .crash-intro a:link:hover {
       text-decoration: none; }
   .crash-intro .icon {
